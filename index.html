@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Plus Jakarta Sans' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+
+        }
+
+        /* media */
+        @media screen and (max-width : 432px) {
+            .tcard {
+                width: 400px;
+            }
+
+            .a-isi {
+                width: 80%;
+            }
+
+            audio {
+                width: 90%;
+            }
+
+            .nav h1 {
+                font-size: 15px;
+            }
+
+        }
+
+        /* a */
+        .space {
+            height: 20vh;
+            width: 100vw;
+        }
+
+        .center {
+            width: 100vw;
+
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .all {
+            text-align: center;
+            justify-content: center;
+            display: flex;
+        }
+
+
+        .container {
+            width: 100vw;
+            background-color: #fff;
+
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+        /* searcing bar================= */
+        .nav {
+            width: 100vw;
+
+            position: fixed;
+            z-index: 2;
+            top: 0;
+
+            /* background-color: khaki; */
+            text-align: center;
+        }
+        
+        input[type=text]:focus, input[type=text]:hover {
+            outline: none;
+            border: none;
+            width: 200px;
+            
+
+            color: #E4E4E4;
+
+            -webkit-transition: width 0.15s ease-in-out;
+            transition: width 0.15s ease-in-out;
+        }
+
+        input[type=text] {
+            color: #717172;
+            border: none;
+            font-size: 20px;
+            width: 20px;
+            height: 4vh;
+            background-color: rgba(0, 0, 0, 0.70);
+
+            backdrop-filter: blur(100px) saturate(120%);
+
+            border-radius: 100px;
+            padding: 5px;
+
+
+            margin: 10px;
+      
+
+            box-shadow: 1px 2px 30px #77777758;
+
+            -webkit-transition: width 0.15s ease-in-out;
+            transition: width 0.15s ease-in-out;
+        }
+
+  
+
+        .nav h1 {
+            font-size: 20px;
+            font-family: plus jakarta sans;
+            text-align: center;
+            font-weight: 300;
+
+            color: #E4E4E4;
+
+
+
+
+        }
+
+        /* .nav span{
+            font-size: 25px;
+            font-family: plus jakarta sans;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: 100;
+        } */
+        .by {
+            width: 160px;
+            height: 40px;
+            position: fixed;
+            background-color: #ffffff;
+            bottom: 0;
+            margin: 20px;
+            font-size: 13px;
+
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+            border-radius: 100px;
+
+            font-family: plus jakarta sans;
+            color: #2b2b2b;
+            box-shadow: 1px 2px 30px #77777758;
+            z-index: 2;
+
+        }
+
+        .content {
+            width: 100vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .tcard:hover{
+            transform: scale(1.04);
+
+        }
+
+        .tcard {
+            display: list-item; 
+            transition: transform 0.3s;
+
+            list-style: none;
+            width: 351px;
+            background-color: #F8F9FA;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 40px;
+            border-radius: 40px;
+            padding: 1px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ttextArea {
+            height: 30%;
+            width: 100%;
+            text-align: center;
+
+            margin-top: 30px;
+            align-items: center;
+            /* background-color: #ededed; */
+
+        }
+
+        .ttextArea h1 {
+            font-size: 30px;
+            font-family: Plus Jakarta Sans;
+
+            color: #2b2b2b;
+            font-weight: 300;
+
+
+
+
+        }
+
+        .ttextArea p {
+            font-size: 15px;
+            font-family: Plus Jakarta Sans;
+            color: #666666;
+            margin: 5px;
+        }
+
+        .ttextArea span {
+            color: #777777;
+            font-weight: 300;
+            font-family: Plus Jakarta Sans;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tisi {
+            width: 100%;
+            /* background-color: #53a2a94e; */
+
+            justify-content: center;
+            text-align: center;
+            display: flex;
+        }
+
+        .a-isi {
+            height: 90%;
+
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .div-surat {
+            width: 75px;
+            height: 110px;
+            background-color: #2b2b2b;
+
+
+
+            font-family: Plus Jakarta Sans;
+
+            border-radius: 100px;
+        }
+
+        .div-surat p {
+            color: #F8F9FA;
+            font-weight: 300;
+            font-size: 12px;
+            width: 100%;
+
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            /* background-color: rgba(0, 255, 255, 0.235); */
+
+
+
+            height: 40%;
+        }
+
+        .div-surat h1 {
+            color: #F8F9FA;
+            width: 100%;
+            height: 50%;
+            font-weight: 300;
+            font-size: 40px;
+            /* background-color: rgba(0, 255, 255, 0.235); */
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .div-ayat {
+            width: 220px;
+            height: 110px;
+            background-color: #E4E4E4;
+            border-radius: 45px;
+            font-family: Plus Jakarta Sans;
+            margin-left: 15px;
+
+        }
+
+        .div-ayat p {
+            color: #2b2b2b;
+
+            width: 100%;
+            height: 40%;
+            font-size: 12px;
+
+            /* background-color: rgba(0, 255, 255, 0.235); */
+            font-weight: 300;
+
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .div-ayat h1 {
+            color: #2b2b2b;
+            width: 100%;
+            height: 50%;
+            font-weight: 300;
+            font-size: 40px;
+
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+
+        }
+
+        .white-box {
+            width: 270px;
+            height: 50%;
+            background-color: #F1F3F4;
+        }
+
+        /* .div-number{
+            width: 150px;
+            height: 130px;
+            background-color: #E4E4E4;
+            border-radius: 45px;
+            font-family: Plus Jakarta Sans;
+            margin-left: 15px;
+        }
+         .div-number p {
+            width: 100%;
+            height: 40%;
+
+            /* background-color: rgba(0, 255, 255, 0.235); */
+        /* font-weight: 300;
+
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+         } */
+        /* .div-number h1{
+            color: #2b2b2b;
+            width: 100%;
+            height: 50%;
+            font-weight: 300;
+            font-size: 50px;
+
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+         } */
+        .div-audio {
+            height: 100px;
+            width: 100%;
+
+            /* background-color: #a653a91b; */
+
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            text-align: center;
+        }
+
+        audio {
+            background-color: #E4E4E4;
+            padding: 7px;
+            width: 85%;
+            border-radius: 100px;
+
+        }
+
+        .ttextArea div {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <div class="nav">
+            <!-- <i class='bx bx-search'></i>      -->
+            <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="🔎 Search Murotal...">
+        </div>
+    </div>
+    <div class="div" style="height: 20vh;"></div>
+    <div class="all">
+        <div class="by">
+            <p>By:Azka Azkia Baiquni</p>
+        </div>
+        <div class="container">
+            <div class="content" id="content">
+                <!-- ===========Card=========== -->
+                <!-- <div class="tcard">
+                    <!-- ------tetxt -->
+                <!-- <div class="ttextArea">
+                        <h1>Alfatihah</h1>
+                       <div><p>Place: Macca</p> <p>type: Makkiyah</p></div> 
+                        <span><p>Pembukaan</p> | <p> الفاتحة </p>| <p>The Opening</p></span>
+                    </div>
+                     -->
+                <!-- ------details- div -->
+                <!-- <div class="tisi">
+                        <div class="a-isi">
+                            <div class="div-surat">
+                                <p>Surat</p>
+                                <h1>1</h1>
+                            </div>
+                            <div class="div-ayat">
+        ht                        <p>Ayat</p>
+                                <h1>7</h1>
+                            </div>
+                            <div class="div-number">
+                                <p>No.</p>
+                                <h1>1</h1>
+                            </div>
+                        </div> -->
+
+                <!-- ------audio -->
+                <!-- <div class="div-audio">
+                                <audio controls>
+                                    <source src="horse.ogg" type="audio/ogg">
+                                    <source src="horse.mp3" type="audio/mpeg">
+                                  Your browser does not support the audio element.
+                                </audio>
+                        </div> -->
+
+                <!-- </div> -->
+
+                <!-- </div>  -->
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const url = 'https://raw.githubusercontent.com/penggguna/QuranJSON/master/quran.json';
+        const content = document.getElementById('content');
+
+
+        // fetch(url).then(response => response.json()).then(data => {
+
+        //     data.forEach(el => {
+        //         const card = document.createElement('div')
+        //         card.classList.add('card')
+
+        //         const textArea = document.createElement('p')
+        //         textArea.classList.add('textArea')
+
+        //         content.appendChild(card)
+        //         card.appendChild(textArea)
+        //     })
+        // })
+
+        fetch(url).then(response => response.json()).then(data => {
+            data.forEach(el => {
+
+
+                const card = document.createElement('div') // card
+                card.classList.add('tcard');
+
+                const textArea = document.createElement('div') //text atas judul dll
+                textArea.classList.add('ttextArea');
+
+                const textIsi = document.createElement('div') // text bwh, details
+                textIsi.classList.add('tisi');
+
+                const aIsi = document.createElement('div') // ayat, surat ke, no.
+                aIsi.classList.add('a-isi');
+
+                const divSurat = document.createElement('div') //surat div
+                divSurat.classList.add('div-surat');
+
+
+                const divAyat = document.createElement('div') //ayat div
+                divAyat.classList.add('div-ayat');
+
+                const white = document.createElement('div') // audio araea
+                white.classList.add('white-box');
+
+
+
+
+
+                // const divNumber= document.createElement('div') // audio araea
+                // divNumber.classList.add('div-number');
+
+
+                const divAudio = document.createElement('div') // audio araea
+                divAudio.classList.add('div-audio');
+
+
+
+                // isi ============
+
+                //ttextArea- tetxt
+                const surahApa = document.createElement('h1');
+                surahApa.textContent = el.name
+
+                const areaPlaceType = document.createElement('div');
+
+
+
+                const place = document.createElement('p');
+                place.textContent = 'Place: ' + el.place
+
+                const type = document.createElement('p');
+                type.textContent = 'Type: ' + el.type
+
+
+                const areaTranslate = document.createElement('span'); //translate
+                const ar = document.createElement('p'); //arab
+                // ar.textContent =el.name_translations.ar
+
+                const en = document.createElement('p'); //english
+                // en.textContent = el.name_translations.en
+
+                const id = document.createElement('p'); //indonesia
+                // id.textContent = el.name_translations.id
+
+                //=====
+
+                //details- div ========
+                //tisi
+                //a-isi
+                //div-surat
+                const suratDetails = document.createElement('p');
+                suratDetails.textContent = 'Surat'
+                const numberOfsurat = document.createElement('h1');
+                numberOfsurat.textContent = el.number_of_surah
+
+                //div-ayat
+                const ayatDetails = document.createElement('p');
+                ayatDetails.textContent = 'Amout Of Ayat'
+                const numberOfayat = document.createElement('h1');
+                numberOfayat.textContent = el.number_of_ayah
+
+                //div-number
+                const numberDetails = document.createElement('p');
+                numberDetails.textContent = 'No.'
+                const numberOfnumber = document.createElement('h1');
+                numberOfnumber.textContent = el.number_of_surah
+
+                //=====
+
+                //audio========---=
+                //div-audio
+                const audioEl = document.createElement('audio');
+                audioEl.setAttribute('controls', '');
+                audioEl.setAttribute('src', el.recitation)
+                //llll
+                const space = document.createElement('div');
+                space.classList.add('space')
+
+                // content.append(space);
+
+                content.append(card);
+                card.append(textArea);
+
+                textArea.append(surahApa);
+                textArea.append(areaPlaceType);
+                areaPlaceType.append(place);
+                areaPlaceType.append(type);
+
+                textArea.append(areaTranslate);
+                areaTranslate.append(ar)
+                areaTranslate.append(en)
+                areaTranslate.append(id)
+
+                card.append(textIsi);
+                textIsi.append(aIsi);
+
+                aIsi.append(divSurat)
+                divSurat.append(suratDetails)
+                divSurat.append(numberOfsurat)
+
+                aIsi.append(divAyat);
+                divAyat.append(ayatDetails)
+                divAyat.append(numberOfayat)
+                //    numberOfayat.append(white)
+
+
+                //   aIsi.append(divNumber);
+                //   divNumber.append(numberDetails)
+                //   divNumber.append(numberOfnumber)
+
+                card.append(divAudio)
+                divAudio.append(audioEl)
+            });
+
+            // searcing bar
+              // JavaScript code 
+
+
+
+        })
+        function search_animal() { 
+        let input = document.getElementById('searchbar').value 
+     	input=input.toLowerCase(); 
+    	let x = document.getElementsByClassName('tcard'); 
+
+	
+    	for (i = 0; i < x.length; i++) { 
+		if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+			x[i].style.display="none"; 
+		} 
+		else { 
+			x[i].style.display="list-item";				 
+		} 
+	} 
+} 
+
+
+    </script>
+
+
+
+</body>
+
+</html>
